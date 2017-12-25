@@ -4,15 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+My name is Eduardo Aguilera Olascoaga and I am a Software Engineer with a pasion for great products. The purpose of this blog is to put on "paper" what I learn on a daly basis. If you come cross with something useful, please pass it on. Knowledge deserves to be shared. Otherwise, if you think something I wrote is wrong, inaccurate or not useful, help me and leave a comment with your thoughts.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Edge cases are everywhere, but they hide in plain sight. Because of this, take everything in this blog with a grain of salt. Make it yours and apply it how you think it is best.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+**Contact**
+- [Email](mailto:laloao.2302@gmail.com)
+- [Github](http://github.com/lalo2302)
