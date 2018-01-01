@@ -80,3 +80,5 @@ This can be dangerous, you can suddenly have huge helper files with a bunch of f
 
 ### References
 [1] Martin, Robert C. (2003). Agile Software Development, Principles, Patterns, and Practices. Prentice Hall. p. 95. ISBN 978-0135974445.
+
+{% include disqus.html %}
