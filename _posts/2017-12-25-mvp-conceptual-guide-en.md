@@ -1,5 +1,5 @@
 ---
-title: MVP - A conceptual guide
+title: MVP - A conceptual guide for code architecture
 layout: post
 categories: [Design Patterns, English]
 ---
@@ -40,9 +40,11 @@ But what happens when a visual thing depends on a desicion? This is where the co
 
 Here is where the fun starts. A presenter knows that the view exists and can talk to it, but it doesn't know how it works. A presenter is an independet piece of code which doesn't know what a button is, not even what a color is. A presenter is a communicator, a desicion maker. Let's try to clarify it with an example.
 
-The user clicks a button. This means that the view receives the action of the click, it may make a pretty "loading" animation, then the view communicates with its presenter that something happened, perhaps sending some data like text that the user put through a form. Now the presenter makes a desicion of what will happen then. Lets say that a field had the wrong information, and the system should alert the user about that. This goes beyond the presenter's responsability, so the presenter communicates to the view that it should to send an alert. 
+The user clicks a button. This means that the view receives the action of the click, and passes it on to the presenter. Maybe the presenter will decide that the view should display a "loading" animation, while the data from the click is processed. Now the presenter makes a desicion of what will happen then. Lets say that a field had the wrong information and the presenter notices this, as a result, the system should alert the user about that. This goes beyond the presenter's responsability, so it communicates back to the view that it should to send an alert.
 
-This is what I mean that the view is dumb, and that the presenter is a desicion maker. What we just explained here is what Robert C. Martin describe as Single Responsability Principle[1]
+![diagram 1]({{"/assets/mvp-a-conceptual-guide-1.jpg" | absolut_url }})
+
+This is what I mean that the view is dumb, and that the presenter is a desicion maker. What we just explained here is what Robert C. Martin describes as Single Responsability Principle[1]
 
 ## Model
 
@@ -53,9 +55,9 @@ Almost every application needs to handle data, it is a fundamental part of techn
 
 you are ok.
 
-Back into the previous example, lets put ourselves in the scenario where the user filled out the form correctly, and the presenter needs to handle the data. The presenter will **decide** to send it somewhere (internal, external, etc...), but again, what will happend to the data goes beyond its responsability, so it passes it to the model, waiting maybe for a response. How you handle that response is up to you and the technology you are using, you can pass the presenter as a parameter, or maybe pass a callback (function) for the model to execute it afterwards. 
+Back into the previous example, lets put ourselves in the scenario where the user filled out the form correctly, and the presenter needs to handle the data. The presenter will **decide** to send it somewhere (internal, external, etc...), but again, what will happend to the data goes beyond its responsability, so it is sent to the model, waiting maybe for a response. How you handle that response is up to you and the technology you are using, you can pass the presenter as a parameter, or maybe pass a callback (function) for the model to execute it afterwards. 
 
-Most of the times, I/O tasks happen asyncrounously, you need to internalize this. While model stuff is happening, the view is showing an animation or something to let the user know that something is going on in the backgorund, and remember that the presenter decided what goes when.
+Most of the times, I/O tasks happen asyncrounously, you need to internalize this. While model stuff is happening, the view is showing an animation to let the user know that something is going on in the background, and remember that the presenter decides what goes when.
 
 Just how we came into the model, the chain of events will be reversed. The model will finish, and it comunicates it to the presenter, maybe with some kind of information about the result of the request. The presenter then will decide what to do, in this case it will comunicate to the view that something happened, and to finalize the view will show what the presenter told it to.
 
