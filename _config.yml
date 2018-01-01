@@ -25,9 +25,7 @@ twitter_username: lalo2302
 github_username:  lalo2302
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
